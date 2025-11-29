@@ -2,6 +2,17 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { COLORS, BORDER_RADIUS } from "../constants/theme";
+import Union from "../assets/imgs/Union.png";
+import showUp from "../assets/imgs/image 496.png";
+import Table from "../components/Table";
+import logo1 from "../assets/imgs/Group 47.png";
+import chatgpt from "../assets/imgs/ChatGPT.png";
+import rank from "../assets/imgs/rank.png";
+import com from "../assets/imgs/Mask group.png";
+import icons from "../assets/imgs/Mask group (1).png";
+import phone from "../assets/imgs/Mask group (2).png";
+import hand from "../assets/imgs/Ranketta.png";
+import single_logo from "../assets/imgs/single-logo.png";
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [headerFixed, setHeaderFixed] = useState(false);
