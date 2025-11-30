@@ -13,12 +13,23 @@ import icons from "../assets/imgs/Mask group (1).png";
 import phone from "../assets/imgs/Mask group (2).png";
 import hand from "../assets/imgs/Ranketta.png";
 import single_logo from "../assets/imgs/single-logo.png";
+import Modal from "../components/Modal";
+import ContactModal from "../components/ContactModal";
+import Header from "../components/Header";
+import { COLOR_PALETTE } from "../constants/colorPalette";
+import { useHorizontalScroll } from "../hooks/useHorizontalScroll";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { useContactModal } from "../hooks/useContactModal";
+
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [headerFixed, setHeaderFixed] = useState(false);
   const scrollRef = useRef(null);
+  const [isContactModalOpen, setIsContactModalOpen, handleScroll] = useContactModal();
 
-  // Initialize custom hooks 
+  // Initialize custom hooks
+  useHorizontalScroll(scrollRef);
+  useScrollAnimation();
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -358,7 +369,10 @@ const Home = () => {
           </div>
         </div>
       </PerfectScrollbar>
-      
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </>
   );
 };
